@@ -27,6 +27,8 @@ jobs:
         with:
           ref: ${{ github.head_ref }}
           fetch-depth: 0
+      - name: checkout branch
+        run: git fetch origin master
       - name: Install JQ
         run: sudo apt install jq -y
       - name: run check
