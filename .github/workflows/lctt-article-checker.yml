@@ -28,19 +28,17 @@ jobs:
           git clone https://github.com/${{github.repository}} ${{github.repository}}
           cd ${{github.repository}}
           git checkout ${{github.ref}}
-          pwd
-          ls
       - name: Install JQ
         run: sudo apt install jq -y
       - name: run check
         if: ${{ github.event_name == 'pull_request' }}
-        run:  sh ./scripts/check.sh;
+        run:   ls && sh ./scripts/check.sh;
       - name: run badge
         if: ${{ github.event_name != 'pull_request' }}
-        run: sh ./scripts/badge.sh;
+        run:  ls && sh ./scripts/badge.sh;
       - name: run status
         if: ${{ github.event_name == 'schedule' }}
-        run: sh ./scripts/status.sh;
+        run:  ls && sh ./scripts/status.sh;
       - uses: crazy-max/ghaction-github-pages@v2.2.0
         with:
           keep_history: true
