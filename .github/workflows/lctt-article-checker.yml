@@ -28,6 +28,8 @@ jobs:
           git clone https://github.com/${{github.repository}} ${{github.repository}}
           cd ${{github.repository}}
           git checkout ${{github.ref}}
+          pwd
+          ls
       - name: Install JQ
         run: sudo apt install jq -y
       - name: run check
