@@ -32,17 +32,17 @@ jobs:
         run: sudo apt install jq -y
       - name: run check
         if: ${{ github.event_name == 'pull_request' }}
-        run:   ls && sh ./scripts/check.sh;
+        run:   cd ${{github.repository}} &&  sh ./scripts/check.sh;
       - name: run badge
         if: ${{ github.event_name != 'pull_request' }}
-        run:  ls && sh ./scripts/badge.sh;
+        run:  cd ${{github.repository}} && sh ./scripts/badge.sh;
       - name: run status
         if: ${{ github.event_name == 'schedule' }}
-        run:  ls && sh ./scripts/status.sh;
+        run:  cd ${{github.repository}} && sh ./scripts/status.sh;
       - uses: crazy-max/ghaction-github-pages@v2.2.0
         with:
           keep_history: true
-          build_dir: build
+          build_dir: ${{github.repository}}/build
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
