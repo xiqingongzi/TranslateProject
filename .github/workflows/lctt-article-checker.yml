@@ -27,7 +27,6 @@ jobs:
         run: |
           git clone https://github.com/${{github.repository}} ${{github.repository}}
           cd ${{github.repository}}
-          git fetch ${{github.ref}}
           git checkout ${{github.ref}}
       - name: Install JQ
         run: sudo apt install jq -y
