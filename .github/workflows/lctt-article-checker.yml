@@ -26,24 +26,20 @@ jobs:
         run: |
           echo "::set-env name=TRAVIS_BRANCH::${TRAVIS_BRANCH:-$(echo $GITHUB_REF | awk 'BEGIN { FS = "/" } ; { print $3 }')}" 
           echo "::set-env name=TRAVIS_EVENT_TYPE::$(if [ "schedule" == "${{ github.event_name }}" ]; then echo "cron"; else echo "${{ github.event_name }}"; fi)" 
-      - name: clone repo
-        run: |
-          git clone https://github.com/${{github.repository}} ${{github.repository}}
-          cd ${{github.repository}}
-          git fetch origin
-          git checkout ${{github.ref}}
-          git show-ref
+      - uses: actions/checkout@v2
+        with:
+          fetch-depth: 0
       - name: Install JQ
         run: sudo apt install jq -y
       - name: run check
         if: ${{ github.event_name == 'pull_request' }}
-        run:   cd ${{github.repository}} &&  sh ./scripts/check.sh;
+        run:    sh ./scripts/check.sh;
       - name: run badge
         if: ${{ github.event_name != 'pull_request' }}
-        run:  cd ${{github.repository}} && sh ./scripts/badge.sh;
+        run:   sh ./scripts/badge.sh;
       - name: run status
         if: ${{ github.event_name == 'schedule' }}
-        run:  cd ${{github.repository}} && sh ./scripts/status.sh;
+        run:  sh ./scripts/status.sh;
       - uses: crazy-max/ghaction-github-pages@v2.2.0
         with:
           keep_history: true
