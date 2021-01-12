@@ -8,7 +8,7 @@ set -e
 #   - /tmp/changes # 文件变更列表
 ################################################################################
 
-git merge-base master HEAD
+git  --no-pager branch 
 
 echo "[收集] 计算 PR 分支与目标分支的分叉点……"
 
