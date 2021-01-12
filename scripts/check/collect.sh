@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 # PR 文件变更收集
 set -e
 
