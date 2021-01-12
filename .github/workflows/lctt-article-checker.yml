@@ -26,10 +26,7 @@ jobs:
         uses: actions/checkout@v2  
         with:
           ref: ${{ github.head_ref }}
-          fetch-depth:: 0
-      - name: Add PR base ref
-        run: |
-          git fetch --depth=1 origin +refs/heads/${{github.base_ref}}:refs/remotes/origin/${{github.base_ref}}
+          fetch-depth: 0
       - name: Install JQ
         run: sudo apt install jq -y
       - name: run check
