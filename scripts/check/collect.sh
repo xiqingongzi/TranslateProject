@@ -9,12 +9,13 @@ set -e
 ################################################################################
 
 echo "[收集] 计算 PR 分支与目标分支的分叉点……"
-
+FROM_BRANCH="${git --no-pager branch}"
 TARGET_BRANCH="${TRAVIS_BRANCH:-master}"
+
 echo "[收集] 目标分支设定为：${TARGET_BRANCH}"
 
 git checkout master
-git  --no-pager branch 
+git checkout $FROM_BRANCH
 
 MERGE_BASE='HEAD^'
 [ "$TRAVIS_PULL_REQUEST" != 'false' ] \
