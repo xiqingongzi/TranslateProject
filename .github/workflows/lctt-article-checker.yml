@@ -31,6 +31,7 @@ jobs:
           fetch-depth: 0
       - name: checkout branch
         run: git pull origin master
+      - run: "git --no-pager branch"
       - name: Install JQ
         run: sudo apt install jq -y
       - name: run check
