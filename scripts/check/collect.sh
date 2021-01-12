@@ -17,6 +17,7 @@ echo "[收集] 目标分支设定为：${TARGET_BRANCH}"
 
 git checkout master
 git checkout fix/test
+git merge-base master HEAD
 
 MERGE_BASE='HEAD^'
 [ "$TRAVIS_PULL_REQUEST" != 'false' ] \
