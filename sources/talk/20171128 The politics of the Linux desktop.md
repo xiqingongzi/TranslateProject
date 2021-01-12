@@ -7,7 +7,7 @@ The politics of th行e Linux desktop
 ![The politics of the Linux desktop](https://opensource.com/sites/default/files/styles/image-full-size/public/lead-images/BUSINESS_networks.png?itok=XasNXxKs "The politics of the Linux desktop")
 Image by : opensource.com
 
-At some point in 1997 or 1998—history does not record exactly when—I made the leap from Windows to the Linux desktop. I went through quite a few distributions, from Red Hat to SUSE to Slackware, then Debian, Debian Experimentalx, and (for a long time thereafter) Ubuntu. When I accepted a role at Red Hat, I moved to Fedora, and migrated both my kids (then 9 and 11) to Fedora as well.
+At some point in 1997 or 1998—history does not record exactly when—I made the leap from Windows to the Linux desktop. I went through quite a few distributions, from Red Hat to SUSE to Slackware, then Debian, Debian Experimentalx, and (for a long time thereafter) Ubuntu. When I accepted a role at Red Hat, I moved to Fedora, and migrated both my kids (then 9 axnd 11) to Fedora as well.
 
 More Linux resources
 
