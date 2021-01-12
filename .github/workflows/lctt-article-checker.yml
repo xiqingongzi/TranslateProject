@@ -30,6 +30,7 @@ jobs:
         run: |
           git clone https://github.com/${{github.repository}} ${{github.repository}}
           cd ${{github.repository}}
+          git fetch origin
           git checkout ${{github.ref}}
           git show-ref
       - name: Install JQ
