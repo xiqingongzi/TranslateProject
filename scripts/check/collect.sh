@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/sh
 # PR 文件变更收集
 set -e
 
@@ -8,19 +8,16 @@ set -e
 #   - /tmp/changes # 文件变更列表
 ################################################################################
 
+
 echo "[收集] 计算 PR 分支与目标分支的分叉点……"
+
 TARGET_BRANCH="${TRAVIS_BRANCH:-master}"
-
 echo "[收集] 目标分支设定为：${TARGET_BRANCH}"
-
-git --no-pager branch
 
 MERGE_BASE='HEAD^'
 [ "$TRAVIS_PULL_REQUEST" != 'false' ] \
     && MERGE_BASE="$(git merge-base "$TARGET_BRANCH" HEAD)"
-
 echo "[收集] 找到分叉节点：${MERGE_BASE}"
-
 
 echo "[收集] 变更摘要："
 git --no-pager show --summary "${MERGE_BASE}..HEAD"
