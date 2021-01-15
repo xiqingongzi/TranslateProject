@@ -29,7 +29,7 @@ jobs:
       - uses: actions/checkout@v2
         with:
           fetch-depth: 0
-      - run: CURRENT=$(git rev-parse --abbrev-ref HEAD) && git checkout master && git --no-pager branch && git checkout ${{github.ref}}
+      - run: CURRENT=$(echo ${{github.ref}} |  sed "s|refs/|refs/remotes/|") && git checkout master && git --no-pager branch && git checkout CURRENT
       - run: git --no-pager branch
       - name: Install JQ
         run: sudo apt install jq -y
