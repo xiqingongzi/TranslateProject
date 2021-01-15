@@ -26,12 +26,6 @@ jobs:
         with:
           fetch-depth: 0
       - run: git fetch --no-tags --prune --depth=1 origin +refs/heads/master:refs/remotes/origin/master
-      - uses: actions/checkout@v2
-        with:
-          fetch-depth: 0
-          ref: gh-pages
-          path: build
-
       - name: Install JQ
         run: sudo apt install jq -y
       - name: run check
