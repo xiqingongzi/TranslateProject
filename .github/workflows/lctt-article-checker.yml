@@ -26,7 +26,7 @@ jobs:
         with:
           fetch-depth: 0
       - run: git fetch origin +refs/heads/*:refs/remotes/origin/*
-      - run: git config --global user.email "you@example.com" &&  git config --global user.name "Your Name" && git pull origin master --rebase
+      - run: git config --global user.email "you@example.com" &&  git config --global user.name "Your Name" && git pull origin master --rebase --track
       - run: git --no-pager branch
       - name: Install JQ
         run: sudo apt install jq -y
