@@ -27,7 +27,7 @@ jobs:
           path: build
           ref: gh-pages
       - name: remove pages .git
-        run: rm ./build/.git
+        run: rm -rf ./build/.git
       - name: run status
         run: sh ./scripts/status.sh;
       - uses: crazy-max/ghaction-github-pages@v2.2.0
