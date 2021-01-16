@@ -1,4 +1,4 @@
-name: LCTT Article Status
+name: LCTT Article Badge
 
 on:
   push:
