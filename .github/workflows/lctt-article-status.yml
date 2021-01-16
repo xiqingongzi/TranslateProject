@@ -21,4 +21,6 @@ jobs:
           fetch-depth: 0
       - name: run badge
         run: sh ./scripts/badge.sh;
-      - run: ls
+      - name: run status
+        run: sh ./scripts/status.sh;
+      - run: ls ./build/
