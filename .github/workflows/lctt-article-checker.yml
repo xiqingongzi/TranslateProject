@@ -14,8 +14,7 @@ jobs:
     steps:
       - name: Set ENV variables
         run: |
-          echo "::set-env name=TRAVIS_BRANCH::${TRAVIS_BRANCH:-$(echo $GITHUB_REF | awk 'BEGIN { FS = "/" } ; { print $3 }')}" 
-          echo "::set-env name=TRAVIS_EVENT_TYPE::$(if [ "schedule" == "${{ github.event_name }}" ]; then echo "cron"; else echo "${{ github.event_name }}"; fi)"
+          echo "::set-env name=TRAVIS_BRANCH::${TRAVIS_BRANCH:-$(echo $GITHUB_REF | awk 'BEGIN { FS = "/" } ; { print $3 }')}"
       - uses: actions/checkout@v2
         with:
           fetch-depth: 0
