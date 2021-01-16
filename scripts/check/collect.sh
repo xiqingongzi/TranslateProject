@@ -10,9 +10,8 @@ set -e
 
 
 echo "[收集] 计算 PR 分支与目标分支的分叉点……"
-
-TARGET_BRANCH="${DEFAULT_BRANCH:-master}"
-# TARGET_BRANCH="$(echo $GITHUB_REF | awk 'BEGIN { FS = "/" } ; { print $3 }'):-master"
+BRANCH_FROM_CTX="$(echo $GITHUB_REF | awk 'BEGIN { FS = "/" } ; { print $3 }')}"
+TARGET_BRANCH="${BRANCH_FROM_CTX:-master}"
 echo "[收集] 目标分支设定为：${TARGET_BRANCH}"
 
 MERGE_BASE='HEAD^'
