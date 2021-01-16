@@ -8,6 +8,7 @@ jobs:
     runs-on: ubuntu-latest
     env:
       GITHUB_EVENT_NUMBER: ${{ github.event.number }}
+      DEFAULT_BRANCH: master
       ACTIONS_ALLOW_UNSECURE_COMMANDS: true
     steps:
       - uses: actions/checkout@v2
