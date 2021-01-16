@@ -8,7 +8,7 @@ set -e
 #   - /tmp/changes # 文件变更列表
 ################################################################################
 
-
+echo "xxx ${GITHUB_BASE_REF}"
 echo "[收集] 计算 PR 分支与目标分支的分叉点……"
 BRANCH_FROM_CTX="$(echo $GITHUB_REF | awk 'BEGIN { FS = "/" } ; { print $3 }')}"
 TARGET_BRANCH="${BRANCH_FROM_CTX:-master}"
